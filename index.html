@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REVELA – Le style de demain</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-text: #000000;
+      --color-border: #cccccc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px;
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      background-color: var(--color-bg);
+      z-index: 100;
+    }
+
+    nav a {
+      color: var(--color-text);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 80px 10vw;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .section-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    form {
+      margin-top: 30px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid var(--color-border);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    form button {
+      padding: 10px 20px;
+      background-color: var(--color-text);
+      color: var(--color-bg);
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>REVELA</h1>
+    <p>Le style de demain, révélé aujourd'hui.</p>
+  </header>
+
+  <nav>
+    <a href="#wear">Wear</a>
+    <a href="#music">Music</a>
+    <a href="#lab">Lab</a>
+    <a href="#genius">GENIUS by Revela</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="wear">
+    <h2 class="section-title">Revela Wear</h2>
+    <p class="section-text">
+      La section Wear représente le cœur stylistique de Revela. Nos vêtements sont conçus pour traduire l’ambition, la confiance et la créativité. Nous imaginons des tenues qui parlent d’elles-mêmes, à travers des coupes audacieuses, des matières de qualité et un design réfléchi.
+      <br><br>
+      Revela Wear, c’est une vision de la mode où chaque pièce devient un manifeste. Des collections thématiques sortiront régulièrement, inspirées par des civilisations anciennes, des tendances futuristes ou encore des récits de jeunesse urbaine. Chaque collection s’accompagne d’une histoire et d’un état d’esprit.
+    </p>
+  </section>
+
+  <section id="music">
+    <h2 class="section-title">Revela Music</h2>
+    <p class="section-text">
+      La musique fait partie intégrante de l’ADN de Revela. Avec Revela Music, nous développons une ambiance sonore propre à la marque. Chaque collection sera accompagnée de ses propres sons, allant de la MAO (musique assistée par ordinateur) aux collaborations avec des artistes émergents.
+      <br><br>
+      Notre objectif est de créer des univers immersifs : lorsqu’on porte une pièce Revela, on peut aussi écouter la bande-son qui l’accompagne. Cela permet de prolonger l’expérience stylistique en expérience sensorielle.
+    </p>
+  </section>
+
+  <section id="lab">
+    <h2 class="section-title">Revela Lab</h2>
+    <p class="section-text">
+      Revela Lab est notre espace d’innovation. C’est ici que naissent nos projets numériques, nos expériences interactives, nos explorations de l’IA et de la technologie appliquée à la mode. Nous testons de nouvelles façons d’interagir avec nos vêtements et notre communauté.
+      <br><br>
+      Le Lab est également un lieu de réflexion stratégique sur l’avenir de Revela : comment adapter la mode aux enjeux de demain, comment utiliser les outils technologiques pour donner du pouvoir aux créateurs indépendants, comment bâtir une marque vraiment moderne ?
+    </p>
+  </section>
+
+  <section id="genius">
+    <h2 class="section-title">GENIUS by Revela</h2>
+    <p class="section-text">
+      GENIUS by Revela est notre ligne premium. Elle incarne l’élégance silencieuse, la rareté, l’élitisme mental. Ici, les vêtements sont pensés pour des esprits qui vont au-delà du style : ceux qui veulent incarner des idées, des visions.
+      <br><br>
+      Chaque pièce de GENIUS sera produite en quantité limitée, avec une attention extrême portée aux détails, à la symbolique, à la matière. On y retrouvera des références subtiles à la philosophie, aux sciences, à l’histoire ou à la psychologie moderne. GENIUS n’est pas pour tout le monde, c’est un état d’esprit.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-text">
+      Tu veux nous poser une question, proposer une collaboration ou simplement nous laisser un message ? Utilise le formulaire ci-dessous.
+    </p>
+    <form action="mailto:revela.shop2025@gmail.com" method="POST" enctype="text/plain">
+      <label for="nom">Nom</label><br>
+      <input type="text" id="nom" name="nom" required><br>
+
+      <label for="email">Email</label><br>
+      <input type="email" id="email" name="email" required><br>
+
+      <label for="message">Message</label><br>
+      <textarea id="message" name="message" rows="6" required></textarea><br>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  <div style="margin-top: 30px;">
+    <p>Instagram :</p>
+    <ul>
+      <li><a href="https://www.instagram.com/revela.off" target="_blank">@revela.off</a></li>
+      <li><a href="https://www.instagram.com/geniusbyrevela" target="_blank">@geniusbyrevela</a></li>
+    </ul>
+    <br>
+    <p>TikTok :</p>
+    <ul>
+      <li><a href="https://www.tiktok.com/@revela.off?is_from_webapp=1&sender_device=pc" target="_blank">@revela.off</a></li>
+    </ul>
+  </div>
+ </section>
+
+  <footer>
+    <p>&copy; 2025 REVELA. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>
