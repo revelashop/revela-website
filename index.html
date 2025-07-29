@@ -1,55 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>REVELA - Le style de demain</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-  
-  <!-- Description classique -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- Meta pour SEO + Réseaux -->
   <meta name="description" content="REVELA - Le style de demain, révélé aujourd'hui. Mode, luxe, innovation. Découvrez l'univers complet de REVELA.">
-  
-  <!-- Balises Open Graph -->
   <meta property="og:title" content="REVELA - Le style de demain">
-  <meta property="og:description" content="REVELA - Le style de demain, révélé aujourd'hui. Mode, luxe, innovation. Découvrez l'univers complet de REVELA.">
+  <meta property="og:description" content="Mode, luxe, innovation. Découvrez l'univers complet de REVELA.">
   <meta property="og:image" content="https://i.postimg.cc/3RKqS2fb/Vision.png">
   <meta property="og:url" content="https://revelashop.github.io/revela-website/">
   <meta property="og:type" content="website">
-
-  <!-- Balises Twitter (utile aussi pour certains réseaux) -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="REVELA - Le style de demain">
-  <meta name="twitter:description" content="REVELA - Le style de demain, révélé aujourd'hui. Mode, luxe, innovation. Découvrez l'univers complet de REVELA.">
+  <meta name="twitter:description" content="Mode, luxe, innovation. Découvrez l'univers complet de REVELA.">
   <meta name="twitter:image" content="https://i.postimg.cc/3RKqS2fb/Vision.png">
 
   <style>
     :root {
-      --color-bg: #ffffff;
-      --color-text: #000000;
-      --color-border: #cccccc;
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --accent-color: #111111;
+      --border-color: #e0e0e0;
+      --hover-color: #333333;
     }
 
-    * {
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      scroll-behavior: smooth;
     }
 
     header {
-      padding: 50px 20px;
       text-align: center;
-      border-bottom: 1px solid var(--color-border);
+      padding: 40px 20px;
+      border-bottom: 1px solid var(--border-color);
     }
 
     header h1 {
       font-size: 3rem;
+      font-weight: 800;
     }
 
     header p {
@@ -60,36 +54,50 @@
     nav {
       display: flex;
       justify-content: center;
-      gap: 30px;
-      padding: 15px;
-      border-bottom: 1px solid var(--color-border);
+      background-color: var(--bg-color);
+      border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
-      background-color: var(--color-bg);
       z-index: 100;
     }
 
-    nav a {
-      color: var(--color-text);
-      text-decoration: none;
+    nav button {
+      background: none;
+      border: none;
+      padding: 15px 25px;
       font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: color 0.3s ease;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    nav button:hover,
+    nav button.active {
+      color: var(--hover-color);
+      border-bottom: 2px solid var(--accent-color);
     }
 
-    section {
-      padding: 80px 10vw;
-      border-bottom: 1px solid var(--color-border);
+    .content-section {
+      display: none;
+      padding: 60px 10vw;
+      animation: fadeIn 0.4s ease-in-out;
     }
 
-    .section-title {
-      font-size: 2.5rem;
+    .content-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      font-size: 2.3rem;
       margin-bottom: 20px;
     }
 
-    .section-text {
+    p {
       font-size: 1.1rem;
       line-height: 1.8;
     }
@@ -98,105 +106,103 @@
       margin-top: 30px;
     }
 
-    form input, form textarea {
+    input, textarea {
       width: 100%;
       padding: 10px;
       margin-top: 10px;
       margin-bottom: 20px;
-      border: 1px solid var(--color-border);
+      border: 1px solid var(--border-color);
       font-family: 'Montserrat', sans-serif;
     }
 
-    form button {
-      padding: 10px 20px;
-      background-color: var(--color-text);
-      color: var(--color-bg);
+    button[type="submit"] {
+      padding: 10px 25px;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
       border: none;
       font-weight: 600;
       cursor: pointer;
     }
 
-    footer {
-      padding: 30px;
-      text-align: center;
+    ul {
+      padding-left: 20px;
     }
 
-    @media screen and (max-width: 768px) {
+    a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 768px) {
       nav {
         flex-direction: column;
-        align-items: center;
+      }
+
+      nav button {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>REVELA</h1>
     <p>Le style de demain, révélé aujourd'hui.</p>
   </header>
 
   <nav>
-    <a href="#wear">Wear</a>
-    <a href="#music">Music</a>
-    <a href="#lab">Lab</a>
-    <a href="#genius">GENIUS by Revela</a>
-    <a href="#contact">Contact</a>
+    <button class="tab-link active" data-tab="wear">Wear</button>
+    <button class="tab-link" data-tab="music">Music</button>
+    <button class="tab-link" data-tab="lab">Lab</button>
+    <button class="tab-link" data-tab="genius">GENIUS</button>
+    <button class="tab-link" data-tab="contact">Contact</button>
   </nav>
 
-  <section id="wear">
-    <h2 class="section-title">Revela Wear</h2>
-    <p class="section-text">
-      La section Wear représente le cœur stylistique de Revela. Nos vêtements sont conçus pour traduire l’ambition, la confiance et la créativité. Nous imaginons des tenues qui parlent d’elles-mêmes, à travers des coupes audacieuses, des matières de qualité et un design réfléchi.
-      <br><br>
-      Revela Wear, c’est une vision de la mode où chaque pièce devient un manifeste. Des collections thématiques sortiront régulièrement, inspirées par des civilisations anciennes, des tendances futuristes ou encore des récits de jeunesse urbaine. Chaque collection s’accompagne d’une histoire et d’un état d’esprit.
-    </p>
+  <section id="wear" class="content-section active">
+    <h2>Revela Wear</h2>
+    <p>La section Wear représente le cœur stylistique de Revela. Nos vêtements traduisent l’ambition, la confiance et la créativité. Des collections thématiques inspirées par les civilisations, le futur ou la jeunesse urbaine. Chaque pièce devient un manifeste.</p>
   </section>
 
-  <section id="music">
-    <h2 class="section-title">Revela Music</h2>
-    <p class="section-text">
-      La musique fait partie intégrante de l’ADN de Revela. Avec Revela Music, nous développons une ambiance sonore propre à la marque. Chaque collection sera accompagnée de ses propres sons, allant de la MAO (musique assistée par ordinateur) aux collaborations avec des artistes émergents.
-      <br><br>
-      Notre objectif est de créer des univers immersifs : lorsqu’on porte une pièce Revela, on peut aussi écouter la bande-son qui l’accompagne. Cela permet de prolonger l’expérience stylistique en expérience sensorielle.
-    </p>
+  <section id="music" class="content-section">
+    <h2>Revela Music</h2>
+    <p>La musique fait partie de l’ADN de Revela. Chaque collection sera accompagnée de sa propre ambiance sonore, de la MAO aux collaborations artistiques. Une immersion stylistique et sensorielle unique.</p>
   </section>
 
-  <section id="lab">
-    <h2 class="section-title">Revela Lab</h2>
-    <p class="section-text">
-      Revela Lab est notre espace d’innovation. C’est ici que naissent nos projets numériques, nos expériences interactives, nos explorations de l’IA et de la technologie appliquée à la mode. Nous testons de nouvelles façons d’interagir avec nos vêtements et notre communauté.
-      <br><br>
-      Le Lab est également un lieu de réflexion stratégique sur l’avenir de Revela : comment adapter la mode aux enjeux de demain, comment utiliser les outils technologiques pour donner du pouvoir aux créateurs indépendants, comment bâtir une marque vraiment moderne ?
-    </p>
+  <section id="lab" class="content-section">
+    <h2>Revela Lab</h2>
+    <p>Notre espace d'innovation numérique. IA, tech et expériences interactives se croisent ici. Nous redéfinissons les interactions entre la mode, les créateurs et le futur. Un laboratoire d’idées pour la marque de demain.</p>
   </section>
 
-  <section id="genius">
-    <h2 class="section-title">GENIUS by Revela</h2>
-    <p class="section-text">
-      GENIUS by Revela est notre ligne premium. Elle incarne l’élégance silencieuse, la rareté, l’élitisme mental. Ici, les vêtements sont pensés pour des esprits qui vont au-delà du style : ceux qui veulent incarner des idées, des visions.
-      <br><br>
-      Chaque pièce de GENIUS sera produite en quantité limitée, avec une attention extrême portée aux détails, à la symbolique, à la matière. On y retrouvera des références subtiles à la philosophie, aux sciences, à l’histoire ou à la psychologie moderne. GENIUS n’est pas pour tout le monde, c’est un état d’esprit.
-    </p>
+  <section id="genius" class="content-section">
+    <h2>GENIUS by Revela</h2>
+    <p>Notre ligne premium. Élégance silencieuse, symbolique forte, références philosophiques. Produits en édition limitée pour ceux qui pensent plus loin que le style : une mentalité, pas une tendance.</p>
   </section>
 
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p class="section-text">
-      Tu veux nous poser une question, proposer une collaboration ou simplement nous laisser un message ? Utilise le formulaire ci-dessous.
-    </p>
+  <section id="contact" class="content-section">
+    <h2>Contact</h2>
+    <p>Tu veux nous poser une question, proposer une collaboration ou simplement nous laisser un message ?</p>
     <form action="mailto:revela.shop2025@gmail.com" method="POST" enctype="text/plain">
-      <label for="nom">Nom</label><br>
-      <input type="text" id="nom" name="nom" required><br>
-
-      <label for="email">Email</label><br>
-      <input type="email" id="email" name="email" required><br>
-
-      <label for="message">Message</label><br>
-      <textarea id="message" name="message" rows="6" required></textarea><br>
-
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" name="nom" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
       <button type="submit">Envoyer</button>
     </form>
-  <div style="margin-top: 30px;">
+    <br>
     <p>Instagram :</p>
     <ul>
       <li><a href="https://www.instagram.com/revela.off" target="_blank">@revela.off</a></li>
@@ -205,14 +211,26 @@
     <br>
     <p>TikTok :</p>
     <ul>
-      <li><a href="https://www.tiktok.com/@revela.off?is_from_webapp=1&sender_device=pc" target="_blank">@revela.off</a></li>
+      <li><a href="https://www.tiktok.com/@revela.off" target="_blank">@revela.off</a></li>
     </ul>
-  </div>
- </section>
+  </section>
 
   <footer>
     <p>&copy; 2025 REVELA. Tous droits réservés.</p>
   </footer>
 
+  <script>
+    const tabs = document.querySelectorAll(".tab-link");
+    const sections = document.querySelectorAll(".content-section");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        sections.forEach(s => s.classList.remove("active"));
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab).classList.add("active");
+      });
+    });
+  </script>
 </body>
 </html>
