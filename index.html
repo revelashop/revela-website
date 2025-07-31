@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://revelashop.github.io/revela-website/">
   <meta property="og:type" content="website">
 
-  <!-- Balises Twitter -->
+  <!-- Balises Twitter (utile aussi pour certains réseaux) -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="REVELA - Le style de demain">
   <meta name="twitter:description" content="REVELA - Le style de demain, révélé aujourd'hui. Mode, luxe, innovation. Découvrez l'univers complet de REVELA.">
@@ -39,8 +39,7 @@
       font-family: 'Montserrat', sans-serif;
       background-color: var(--color-bg);
       color: var(--color-text);
-      overflow: hidden; /* empêche le scroll */
-      height: 100vh;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -74,7 +73,6 @@
       color: var(--color-text);
       text-decoration: none;
       font-weight: 600;
-      cursor: pointer;
     }
 
     nav a:hover {
@@ -82,14 +80,8 @@
     }
 
     section {
-      display: none;
-      height: calc(100vh - 170px); /* hauteur disponible après header + nav + footer */
-      overflow-y: auto;
       padding: 80px 10vw;
-    }
-
-    section.active {
-      display: block;
+      border-bottom: 1px solid var(--color-border);
     }
 
     .section-title {
@@ -127,7 +119,6 @@
     footer {
       padding: 30px;
       text-align: center;
-      border-top: 1px solid var(--color-border);
     }
 
     .paypal-donate-button {
@@ -160,43 +151,63 @@
   </header>
 
   <nav>
-    <a onclick="showSection('accueil')">Accueil</a>
-    <a onclick="showSection('wear')">Wear</a>
-    <a onclick="showSection('music')">Music</a>
-    <a onclick="showSection('lab')">Lab</a>
-    <a onclick="showSection('genius')">GENIUS by Revela</a>
-    <a onclick="showSection('contact')">Contact</a>
-    <a onclick="showSection('don')">Soutenir</a>
+    <a href="#accueil">Accueil</a>
+    <a href="#wear">Wear</a>
+    <a href="#music">Music</a>
+    <a href="#lab">Lab</a>
+    <a href="#genius">GENIUS by Revela</a>
+    <a href="#contact">Contact</a>
+    <a href="#don">Soutenir</a>
   </nav>
 
-  <section id="accueil" class="active">
+  <section id="accueil">
     <h2 class="section-title">Accueil</h2>
-    <p class="section-text">Entrez dans un univers où chaque détail compte...</p>
+    <p class="section-text">
+      Entrez dans un univers où chaque détail compte. Revela n’est pas juste une marque, c’est une vision. Une idée du futur, révélée aujourd’hui.
+    </p>
   </section>
 
   <section id="wear">
     <h2 class="section-title">Revela Wear</h2>
-    <p class="section-text">La section Wear représente le cœur stylistique de Revela...</p>
+    <p class="section-text">
+      La section Wear représente le cœur stylistique de Revela. Nos vêtements sont conçus pour traduire l’ambition, la confiance et la créativité. Nous imaginons des tenues qui parlent d’elles-mêmes, à travers des coupes audacieuses, des matières de qualité et un design réfléchi.
+      <br><br>
+      Revela Wear, c’est une vision de la mode où chaque pièce devient un manifeste. Des collections thématiques sortiront régulièrement, inspirées par des civilisations anciennes, des tendances futuristes ou encore des récits de jeunesse urbaine. Chaque collection s’accompagne d’une histoire et d’un état d’esprit.
+    </p>
   </section>
 
   <section id="music">
     <h2 class="section-title">Revela Music</h2>
-    <p class="section-text">La musique fait partie intégrante de l’ADN de Revela...</p>
+    <p class="section-text">
+      La musique fait partie intégrante de l’ADN de Revela. Avec Revela Music, nous développons une ambiance sonore propre à la marque. Chaque collection sera accompagnée de ses propres sons, allant de la MAO (musique assistée par ordinateur) aux collaborations avec des artistes émergents.
+      <br><br>
+      Notre objectif est de créer des univers immersifs : lorsqu’on porte une pièce Revela, on peut aussi écouter la bande-son qui l’accompagne. Cela permet de prolonger l’expérience stylistique en expérience sensorielle.
+    </p>
   </section>
 
   <section id="lab">
     <h2 class="section-title">Revela Lab</h2>
-    <p class="section-text">Revela Lab est notre espace d’innovation...</p>
+    <p class="section-text">
+      Revela Lab est notre espace d’innovation. C’est ici que naissent nos projets numériques, nos expériences interactives, nos explorations de l’IA et de la technologie appliquée à la mode. Nous testons de nouvelles façons d’interagir avec nos vêtements et notre communauté.
+      <br><br>
+      Le Lab est également un lieu de réflexion stratégique sur l’avenir de Revela : comment adapter la mode aux enjeux de demain, comment utiliser les outils technologiques pour donner du pouvoir aux créateurs indépendants, comment bâtir une marque moderne ?
+    </p>
   </section>
 
   <section id="genius">
     <h2 class="section-title">GENIUS by Revela</h2>
-    <p class="section-text">GENIUS by Revela est notre ligne premium...</p>
+    <p class="section-text">
+      GENIUS by Revela est notre ligne premium. Elle incarne l’élégance silencieuse, la rareté, l’élitisme mental. Ici, les vêtements sont pensés pour des esprits qui vont au-delà du style : ceux qui veulent incarner des idées, des visions.
+      <br><br>
+      Chaque pièce de GENIUS sera produite en quantité limitée, avec une attention extrême portée aux détails, à la symbolique, à la matière. On y retrouvera des références subtiles à la philosophie, aux sciences, à l’histoire ou à la psychologie moderne. GENIUS n’est pas pour tout le monde, c’est un état d’esprit.
+    </p>
   </section>
 
   <section id="contact">
     <h2 class="section-title">Contact</h2>
-    <p class="section-text">Tu veux nous poser une question, proposer une collaboration...</p>
+    <p class="section-text">
+      Tu veux nous poser une question, proposer une collaboration ou simplement nous laisser un message ? Utilise le formulaire ci-dessous.
+    </p>
     <form action="mailto:revela.shop2025@gmail.com" method="POST" enctype="text/plain">
       <label for="nom">Nom</label><br>
       <input type="text" id="nom" name="nom" required><br>
@@ -225,7 +236,9 @@
 
   <section id="don">
     <h2 class="section-title">Soutenir REVELA</h2>
-    <p class="section-text">Tu crois en l’univers de REVELA et tu veux nous aider...</p>
+    <p class="section-text">
+      Tu crois en l’univers de REVELA et tu veux nous aider à aller plus loin ? Chaque contribution, petite ou grande, fait une différence.
+    </p>
     <a class="paypal-donate-button" href="https://www.paypal.me/DanielTchobanian" target="_blank">Faire un don via PayPal</a>
   </section>
 
@@ -233,13 +246,5 @@
     <p>&copy; 2025 REVELA. Tous droits réservés.</p>
   </footer>
 
-  <script>
-    function showSection(id) {
-      document.querySelectorAll("section").forEach(section => {
-        section.classList.remove("active");
-      });
-      document.getElementById(id).classList.add("active");
-    }
-  </script>
 </body>
 </html>
